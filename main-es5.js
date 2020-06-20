@@ -103,7 +103,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         this.http = http;
         this.popup = popup;
-        this.capitals = '/assets/data/usa-capitals.geojson';
+        this.capitals = './assets/data/usa-capitals.geojson';
       }
 
       _createClass(MarkerService, [{
@@ -313,17 +313,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ShapeService, [{
         key: "getStateShapes",
         value: function getStateShapes() {
-          return this.http.get('/assets/data/usa-states.geojson');
+          return this.http.get('./assets/data/usa-states.geojson');
         }
       }, {
         key: "getWorldShapes",
         value: function getWorldShapes() {
-          return this.http.get('/assets/data/w.js');
+          return this.http.get('./assets/data/w.js');
         }
       }, {
         key: "getConfirmedData",
         value: function getConfirmedData() {
-          return this.http.get('/assets/data/c.js');
+          return this.http.get('./assets/data/c.js');
         }
       }]);
 

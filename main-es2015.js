@@ -47,7 +47,7 @@ class MarkerService {
     constructor(http, popup) {
         this.http = http;
         this.popup = popup;
-        this.capitals = '/assets/data/usa-capitals.geojson';
+        this.capitals = './assets/data/usa-capitals.geojson';
     }
     static ScaledRadius(val, maxVal) {
         return 20 * (val / maxVal);
@@ -147,13 +147,13 @@ class ShapeService {
         this.http = http;
     }
     getStateShapes() {
-        return this.http.get('/assets/data/usa-states.geojson');
+        return this.http.get('./assets/data/usa-states.geojson');
     }
     getWorldShapes() {
-        return this.http.get('/assets/data/w.js');
+        return this.http.get('./assets/data/w.js');
     }
     getConfirmedData() {
-        return this.http.get('/assets/data/c.js');
+        return this.http.get('./assets/data/c.js');
     }
 }
 ShapeService.ɵfac = function ShapeService_Factory(t) { return new (t || ShapeService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
@@ -335,7 +335,7 @@ AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [
         _services_marker_service__WEBPACK_IMPORTED_MODULE_7__["MarkerService"],
         _services_pop_up_service__WEBPACK_IMPORTED_MODULE_8__["PopUpService"],
-        _services_shape_service__WEBPACK_IMPORTED_MODULE_9__["ShapeService"]
+        _services_shape_service__WEBPACK_IMPORTED_MODULE_9__["ShapeService"],
     ], imports: [[
             ngx_countup__WEBPACK_IMPORTED_MODULE_15__["CountUpModule"],
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -378,7 +378,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                 providers: [
                     _services_marker_service__WEBPACK_IMPORTED_MODULE_7__["MarkerService"],
                     _services_pop_up_service__WEBPACK_IMPORTED_MODULE_8__["PopUpService"],
-                    _services_shape_service__WEBPACK_IMPORTED_MODULE_9__["ShapeService"]
+                    _services_shape_service__WEBPACK_IMPORTED_MODULE_9__["ShapeService"],
                 ],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
             }]
