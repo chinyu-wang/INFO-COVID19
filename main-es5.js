@@ -325,6 +325,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function getConfirmedData() {
           return this.http.get('./assets/data/c.js');
         }
+      }, {
+        key: "getExternalCSV",
+        value: function getExternalCSV() {
+          return this.http.get('https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv');
+        }
       }]);
 
       return ShapeService;
@@ -1267,6 +1272,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.setLatLng();
           this.initMap(); //this.markerService.makeCapitalMarkers(this.map);
 
+          this.shapeService.getExternalCSV().subscribe(function (d) {
+            return console.log(d);
+          });
           this.shapeService.getConfirmedData().subscribe(function (confirmed) {
             _this4.confirmed_array = confirmed.sort(function (a, b) {
               return a.confirmed < b.confirmed ? 1 : -1;
@@ -1341,9 +1349,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var _loop2 = function _loop2(_i) {
             var node = _this5.latlng.find(function (el) {
               return el.code == _this5.confirmed_array[_i].iso2;
-            });
+            }); //console.log(node);
 
-            console.log(node);
 
             if (node != undefined) {
               _this5.confirmed_array[_i].lat = node.location[0];
@@ -1490,8 +1497,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.n_name = this.confirmed_array[index].cname + " " + this.confirmed_array[index].name;
           this.n_confirmed = +this.confirmed_array[index].confirmed;
           this.n_population = +this.confirmed_array[index].population;
-          this.selectEvent.emit(this.select);
-          console.log(this.n_confirmed);
+          this.selectEvent.emit(this.select); //console.log(this.n_confirmed);
+
           var marker = leaflet__WEBPACK_IMPORTED_MODULE_1__["marker"]([this.confirmed_array[index].lat, this.confirmed_array[index].lng]).bindPopup(this.n_name + "<br>" + this.n_confirmed + "<br>" + "<img src=" + "https://www.countryflags.io/" + this.confirmed_array[index].iso2 + "/shiny/64.png>").openPopup().addTo(this.map);
           this.n_flag = "https://www.countryflags.io/" + this.confirmed_array[index].iso2 + "/shiny/64.png"; //console.log(this.n_flag);
         }
@@ -3302,7 +3309,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       },
       directives: [ngx_countup__WEBPACK_IMPORTED_MODULE_5__["CountUpDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgForOf"]],
       pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_6__["DecimalPipe"]],
-      styles: ["#map[_ngcontent-%COMP%] {\n  height: 100%;\n  background: black;\n  border-radius: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9jaGlueXUvd3d3L2NvdmlkMTkvc3JjL2FwcC9tYXAvbWFwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9tYXAvbWFwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsWUFBQTtFQUNBLGlCQUFBO0VBQ0EsbUJBQUE7QUNBRiIsImZpbGUiOiJzcmMvYXBwL21hcC9tYXAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcbiNtYXAge1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJhY2tncm91bmQ6IGJsYWNrO1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xufVxuIiwiI21hcCB7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZDogYmxhY2s7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG59Il19 */"]
+      styles: ["#map[_ngcontent-%COMP%] {\n  height: 100%;\n  background: black;\n  border-radius: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWFwL21hcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNFLFlBQUE7RUFDQSxpQkFBQTtFQUNBLG1CQUFBO0FBQUYiLCJmaWxlIjoic3JjL2FwcC9tYXAvbWFwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4jbWFwIHtcbiAgaGVpZ2h0OiAxMDAlO1xuICBiYWNrZ3JvdW5kOiBibGFjaztcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbn1cbiJdfQ== */"]
     });
     /*@__PURE__*/
 
