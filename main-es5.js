@@ -328,7 +328,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getExternalCSV",
         value: function getExternalCSV() {
-          return this.http.get('https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv');
+          //    return this.http.get('https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv');
+          return;
         }
       }]);
 
@@ -495,9 +496,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.markerService = markerService;
         this.shapeService = shapeService;
         this.title = 'COVID-19 全球疫情資訊 1.0';
-        this.confirmed = 8546919;
-        this.death = 456726;
-        this.update_date = '2020-06-20 上午12:33';
+        this.confirmed = 10145947;
+        this.death = 501898;
+        this.update_date = '2020-06-29 下午1:33';
       }
 
       _createClass(AppComponent, [{
@@ -1271,10 +1272,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.setLatLng();
           this.initMap(); //this.markerService.makeCapitalMarkers(this.map);
+          //    this.shapeService.getExternalCSV().subscribe(d => console.log(d));
 
-          this.shapeService.getExternalCSV().subscribe(function (d) {
-            return console.log(d);
-          });
           this.shapeService.getConfirmedData().subscribe(function (confirmed) {
             _this4.confirmed_array = confirmed.sort(function (a, b) {
               return a.confirmed < b.confirmed ? 1 : -1;
