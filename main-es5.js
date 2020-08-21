@@ -323,7 +323,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getConfirmedData",
         value: function getConfirmedData() {
-          return this.http.get('./assets/data/c.js');
+          return this.http.get('./assets/data/c-20200821.js');
         }
       }, {
         key: "getExternalCSV",

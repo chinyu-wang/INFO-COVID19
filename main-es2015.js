@@ -153,7 +153,7 @@ class ShapeService {
         return this.http.get('./assets/data/w.js');
     }
     getConfirmedData() {
-        return this.http.get('./assets/data/c.js');
+        return this.http.get('./assets/data/c-20200821.js');
     }
     getExternalCSV() {
         //    return this.http.get('https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv');
