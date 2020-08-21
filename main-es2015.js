@@ -233,9 +233,9 @@ class AppComponent {
         this.markerService = markerService;
         this.shapeService = shapeService;
         this.title = 'COVID-19 全球疫情資訊 1.0';
-        this.confirmed = 10145947;
-        this.death = 501898;
-        this.update_date = '2020-06-29 下午1:33';
+        this.confirmed = 22683770;
+        this.death = 793773;
+        this.update_date = '2020-08-21 下午3:27';
     }
     ngAfterViewInit() {
         this.shapeService.getConfirmedData().subscribe(confirmed => {
