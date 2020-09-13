@@ -153,7 +153,7 @@ class ShapeService {
         return this.http.get('./assets/data/w.js');
     }
     getConfirmedData() {
-        return this.http.get('./assets/data/c-20200821.js');
+        return this.http.get('./assets/data/c-20200913.js');
     }
     getExternalCSV() {
         //    return this.http.get('https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv');
@@ -233,9 +233,9 @@ class AppComponent {
         this.markerService = markerService;
         this.shapeService = shapeService;
         this.title = 'COVID-19 全球疫情資訊 1.0';
-        this.confirmed = 22683770;
-        this.death = 793773;
-        this.update_date = '2020-08-21 下午3:27';
+        this.confirmed = 28773855;
+        this.death = 920467;
+        this.update_date = '2020-09-13 下午4:26';
     }
     ngAfterViewInit() {
         this.shapeService.getConfirmedData().subscribe(confirmed => {

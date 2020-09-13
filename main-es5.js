@@ -323,7 +323,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getConfirmedData",
         value: function getConfirmedData() {
-          return this.http.get('./assets/data/c-20200821.js');
+          return this.http.get('./assets/data/c-20200913.js');
         }
       }, {
         key: "getExternalCSV",
@@ -496,9 +496,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.markerService = markerService;
         this.shapeService = shapeService;
         this.title = 'COVID-19 全球疫情資訊 1.0';
-        this.confirmed = 22683770;
-        this.death = 793773;
-        this.update_date = '2020-08-21 下午3:27';
+        this.confirmed = 28773855;
+        this.death = 920467;
+        this.update_date = '2020-09-13 下午4:26';
       }
 
       _createClass(AppComponent, [{
